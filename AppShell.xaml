@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiPracticeApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:MauiPracticeApp.Resources.Pages"
+    xmlns:local="clr-namespace:MauiPracticeApp"
+    Shell.FlyoutBehavior="Disabled"
+    >
+
+    <TabBar>
+        <Tab Icon="dotnet_bot.png" Title="Counter">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
+        </Tab>
+        <Tab Icon="light_bulb.png" Title="Slider">
+            <ShellContent ContentTemplate="{DataTemplate local:SliderPage}"/>
+        </Tab>
+        <Tab Icon="color_palette.png" Title="Background color">
+            <ShellContent ContentTemplate="{DataTemplate pages:BackroundChanger}"/>
+        </Tab>
+    </TabBar>
+
+   
+</Shell>

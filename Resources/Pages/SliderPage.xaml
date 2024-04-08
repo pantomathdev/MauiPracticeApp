@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPracticeApp.SliderPage"
+             Title="SliderPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <x:Int64 x:Key="SliderValueProperty">100</x:Int64>
+            <Style TargetType="Slider">
+                <Setter Property="MaximumTrackColor" Value="BlueViolet" />
+                <Setter Property="ThumbColor" Value="Black" />
+                <Setter Property="MinimumTrackColor" Value="Red"/>
+            </Style>
+            <Style TargetType="Image">
+                <Setter Property="Opacity" Value="{DynamicResource SliderValueProperty}"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions="*">
+        <Image Source="https://aka.ms/campus.jpg" Grid.RowSpan="4" Grid.ColumnSpan="4" IsOpaque="True"/>
+        <Label x:Name="OpacityLabel" Text="{DynamicResource SliderValueProperty}" WidthRequest="150" FontAttributes="Bold" TextColor="Black" BackgroundColor="Azure" Grid.Row="1" Grid.Column="0" FontSize="22" VerticalOptions="End"/>
+        <Slider ValueChanged="SliderComponent_ValueChanged" ThumbImageSource="finger.png" VerticalOptions="EndAndExpand" Grid.Row="2" Grid.ColumnSpan="1" Minimum="0" Maximum="100" Value="100" />
+    </Grid>
+</ContentPage>
